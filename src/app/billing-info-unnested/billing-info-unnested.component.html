@@ -1,0 +1,33 @@
+<!-- 
+<div class="container">
+  <form [formGroup] ="nestedForm" (ngSubmit) = "onSubmit()">
+<div class="row">
+  <label for="Full Name"> Full Name </label>
+    <input type="text" formControlName="fname" class="">
+</div>
+<div class="row">
+  <label for="Email"> Email </label>
+    <input type="text" formControlName="email" class="">
+</div>
+<div class="row">
+  <label for="addressLine"> Street Address </label>
+    <input type="text" formControlName="addressLine" class="">
+</div>
+<div class="row">
+  <label for="Area"> Area Code </label>
+    <input type="text" formControlName="areacode" class="">
+</div>
+
+<button type="submit" [disabled]="nestedForm.invalid">Place Order</button>
+</form>
+</div> -->
+
+<div class="container">
+  <form [formGroup]="nestedForm" (ngSubmit)="onSubmit()">
+    <app-basic-info formControlName="basicInfo"></app-basic-info>
+    <app-address-info formControlName="address"></app-address-info>
+
+    <button type="submit" [disabled]="nestedForm.invalid">Place Order</button>
+  </form>
+</div>
+<button (click)="removeControlEmail()"> Remove control Email  </button>
