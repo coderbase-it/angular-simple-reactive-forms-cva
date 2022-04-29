@@ -13,7 +13,7 @@ import { ControlValueAccessor,NG_VALUE_ACCESSOR, NG_VALIDATORS, FormGroup,FormCo
     }
   ]
 })
-export class AddressInfoComponent implements OnInit, ControlValueAccessor {
+export class AddressInfoComponent implements OnInit, ControlValueAccessor, Validator {
 
 public addressForm: FormGroup = new FormGroup({
   addressLine: new FormControl("",[Validators.required]),
@@ -22,6 +22,12 @@ public addressForm: FormGroup = new FormGroup({
 
 
   constructor() { }
+validate(control: AbstractControl): ValidationErrors {
+throw new Error('Method not implemented.');
+}
+registerOnValidatorChange?(fn: () => void): void {
+throw new Error('Method not implemented.');
+}
 
   ngOnInit() {
   }
